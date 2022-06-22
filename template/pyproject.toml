@@ -1,0 +1,16 @@
+[project]
+name = "soduku-cell"
+version = "0.0.0"
+description = "A dummy package for a soduku cell"
+authors = [
+    {name = "Frost Ming", email = "mianghong@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.7"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
