@@ -4,12 +4,22 @@ version = "0.12.7"
 requires_python = ">=3.7"
 summary = "A PEP 517 backend for PDM that supports PEP 621 metadata"
 
+[[package]]
+name = "tomli"
+version = "2.0.1"
+requires_python = ">=3.7"
+summary = "A lil' TOML parser"
+
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:740633b5c94fd816494df8b176315100356ad87d5819998a7208c11b94ef247c"
+content_hash = "sha256:5d4900f46e44c4c06bdbd0f3ff3665f3141efc4ccb896921dbaf488430c86760"
 
 [metadata.files]
 "pdm-pep517 0.12.7" = [
     {file = "pdm_pep517-0.12.7-py3-none-any.whl", hash = "sha256:d01ac717a44863844ba3361fcfcd5acefd67f63ee8a4f5a549f0febe12d46cb5"},
     {file = "pdm-pep517-0.12.7.tar.gz", hash = "sha256:6a4ed513edbcfd518e3b07e9118575d3fb35cc04551dd8acf3531e2463ef7fe3"},
+]
+"tomli 2.0.1" = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
 ]

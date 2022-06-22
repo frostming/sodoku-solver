@@ -21,6 +21,8 @@ def _get_dependencies(lines: Iterable[str]) -> List[str]:
                 result.append(f"sodoku-cell{i}{j}")
             else:
                 result.append(f"sodoku-cell{i}{j}=={c}")
+            j += 1
+        i += 1
 
     return result
 

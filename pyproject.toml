@@ -7,11 +7,17 @@ authors = [
 ]
 dependencies = [
     "pdm-pep517>=0.12.7",
+    "tomli>=2.0.1",
 ]
 requires-python = ">=3.8"
 license = {text = "MIT"}
 
-[tool.pdm]
+[tool.pdm.scripts]
+generate = "python -m sodoku_solver generate"
+serve = "pypi-server run output/packages"
+pypi.shell = "python -m sodoku_solver generate && pypi-server run output/packages"
+new = "python -m sodoku_solver new"
+solution = "python -m sodoku_solver solution"
 
 [build-system]
 requires = ["pdm-pep517>=0.12.0"]

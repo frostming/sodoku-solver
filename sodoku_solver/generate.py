@@ -29,10 +29,11 @@ def generate_package(row: int, col: int, version: int) -> None:
         meta._metadata["name"] = f"sodoku-cell{row+1}{col+1}"
         meta._metadata["version"] = str(version)
         meta._metadata["dependencies"] = _calculate_dependencies(row, col, version)
-        builder.build(OUTPUT_DIR)
+        builder.build(OUTPUT_DIR / "packages")
 
 
 def generate():
+    OUTPUT_DIR.joinpath("packages").mkdir()
     for row in RANGE:
         for col in RANGE:
             for version in range(1, 10):
