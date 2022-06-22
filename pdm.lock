@@ -1,0 +1,15 @@
+[[package]]
+name = "pdm-pep517"
+version = "0.12.7"
+requires_python = ">=3.7"
+summary = "A PEP 517 backend for PDM that supports PEP 621 metadata"
+
+[metadata]
+lock_version = "3.1"
+content_hash = "sha256:740633b5c94fd816494df8b176315100356ad87d5819998a7208c11b94ef247c"
+
+[metadata.files]
+"pdm-pep517 0.12.7" = [
+    {file = "pdm_pep517-0.12.7-py3-none-any.whl", hash = "sha256:d01ac717a44863844ba3361fcfcd5acefd67f63ee8a4f5a549f0febe12d46cb5"},
+    {file = "pdm-pep517-0.12.7.tar.gz", hash = "sha256:6a4ed513edbcfd518e3b07e9118575d3fb35cc04551dd8acf3531e2463ef7fe3"},
+]

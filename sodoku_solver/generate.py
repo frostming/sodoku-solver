@@ -1,10 +1,8 @@
-from pathlib import Path
 from typing import List, Set
+
 from pdm.pep517.wheel import WheelBuilder
 
-TEMPLATE_PATH = Path(__file__).absolute().parent.parent / "template"
-OUTPUT_DIR = TEMPLATE_PATH.with_name("output")
-OUTPUT_DIR.mkdir(exist_ok=True)
+from sodoku_solver.consts import OUTPUT_DIR, TEMPLATE_PATH
 
 RANGE = range(9)
 
