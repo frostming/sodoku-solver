@@ -1,7 +1,7 @@
 # Package Manager Sodoku Solver
 
-The original work: https://github.com/mildbyte/poetry-sudoku-solver/
-The article: https://www.splitgraph.com/blog/poetry-dependency-resolver-sudoku
+- The original work: https://github.com/mildbyte/poetry-sudoku-solver/
+- The article: https://www.splitgraph.com/blog/poetry-dependency-resolver-sudoku
 
 ## Usage
 
