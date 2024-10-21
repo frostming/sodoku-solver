@@ -1,7 +1,7 @@
 [project]
-name = ""
-version = ""
-description = ""
+name = "sodoku-solver"
+version = "0.1.0"
+description = "Package Manager Sodoku Solver"
 authors = [
     {name = "Frost Ming", email = "mianghong@gmail.com"},
 ]
@@ -13,6 +13,9 @@ dependencies = [
 requires-python = ">=3.8"
 license = {text = "MIT"}
 
+[tool.pdm]
+distribution = false
+
 [tool.pdm.scripts]
 generate = "python -m sodoku_solver generate"
 serve = "pypi-server run output/packages"
@@ -21,6 +24,3 @@ new = "python -m sodoku_solver new"
 solve = "python -m sodoku_solver solve"
 puzzle = "python -m sodoku_solver puzzle"
 
-[build-system]
-requires = ["pdm-pep517>=0.12.0"]
-build-backend = "pdm.pep517.api"

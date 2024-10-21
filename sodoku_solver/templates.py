@@ -1,13 +1,15 @@
 import json
 from typing import Iterable, List, Tuple
 
-
-PEP621_TEMPLATE = """\
+PDM_TEMPLATE = """\
 [project]
-name = ""
-version = ""
+name = "test-project"
+version = "0.0.0"
 dependencies = {}
 requires-python = ">=3.8"
+
+[tool.pdm]
+distribution = false
 
 [[tool.pdm.source]]
 name = "pypi"
@@ -29,6 +31,19 @@ python = "^3.8"
 [[tool.poetry.source]]
 name = "local"
 url = "http://localhost:8080/simple/"
+priority = "primary"
+"""
+
+UV_TEMPLATE = """\
+[project]
+name = "test-project"
+version = "0.0.0"
+dependencies = {}
+requires-python = ">=3.8"
+
+[[tool.uv.index]]
+name = "local"
+url = "http://localhost:8080/simple/"
 default = true
 """
 
@@ -42,12 +57,31 @@ url = "http://localhost:8080/simple/"
 verify_ssl = false
 """
 
+REQUIREMENT_TEMPLATE = """\
+--index-url http://localhost:8080/simple/
+{}
+"""
 
-def fill_pep621(dependencies: Iterable[Tuple[str, str]]) -> str:
+
+def fill_requirement(dependencies: Iterable[Tuple[str, str]]) -> str:
     dependency_array = [
         f"{name}=={version}" if version else name for name, version in dependencies
     ]
-    return PEP621_TEMPLATE.format(json.dumps(dependency_array, indent=2))
+    return REQUIREMENT_TEMPLATE.format("\n".join(dependency_array))
+
+
+def fill_pdm(dependencies: Iterable[Tuple[str, str]]) -> str:
+    dependency_array = [
+        f"{name}=={version}" if version else name for name, version in dependencies
+    ]
+    return PDM_TEMPLATE.format(json.dumps(dependency_array, indent=2))
+
+
+def fill_uv(dependencies: Iterable[Tuple[str, str]]) -> str:
+    dependency_array = [
+        f"{name}=={version}" if version else name for name, version in dependencies
+    ]
+    return UV_TEMPLATE.format(json.dumps(dependency_array, indent=2))
 
 
 def fill_poetry(dependencies: Iterable[Tuple[str, str]]) -> str:
@@ -72,4 +106,10 @@ def fill_pipenv(dependencies: Iterable[Tuple[str, str]]) -> str:
     return PIPFILE_TEMPLATE.format("\n".join(lines))
 
 
-TEMPLATES = {"pdm": fill_pep621, "poetry": fill_poetry, "pipenv": fill_pipenv}
+TEMPLATES = {
+    "pdm": fill_pdm,
+    "poetry": fill_poetry,
+    "pipenv": fill_pipenv,
+    "uv": fill_uv,
+    "pip": fill_requirement,
+}

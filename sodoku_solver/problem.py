@@ -1,4 +1,5 @@
 from typing import Iterable, List, Tuple
+
 from sodoku_solver.consts import OUTPUT_DIR
 from sodoku_solver.templates import TEMPLATES
 
@@ -35,5 +36,11 @@ def new_problem(package_manager: str, filename: str) -> None:
     template = TEMPLATES[package_manager]
     content = template(dependencies)
     OUTPUT_DIR.joinpath(f"{package_manager}-project").mkdir(exist_ok=True)
-    project_file = "Pipfile" if package_manager == "pipenv" else f"pyproject.toml"
+    project_file = (
+        "Pipfile"
+        if package_manager == "pipenv"
+        else "requirements.txt"
+        if package_manager == "pip"
+        else "pyproject.toml"
+    )
     OUTPUT_DIR.joinpath(f"{package_manager}-project", project_file).write_text(content)

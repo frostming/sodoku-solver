@@ -21,7 +21,7 @@
 4. Solve the Sodoku with specified package manager.
 
    ```bash
-   pdm run puzzle [pdm|pipenv|poetry]
+   pdm run puzzle [pdm|pipenv|poetry|uv|pip]
    ```
 
    You need to have the called package manager installed and discoverable in `PATH`.
